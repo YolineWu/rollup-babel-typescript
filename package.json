@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "rollup-babel-typescript",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin typescript",
+    "watch": "rimraf dist && rollup --config rollup.config.ts --configPlugin typescript --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/hihookeji/heihu-iframe-tools.git"
+  },
+  "author": "yoline <wu.yoline@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/plugin-transform-runtime": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-typescript": "^7.23.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@tsconfig/node21": "^21.0.1",
+    "@types/node": "^20.11.5",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.8"
+  }
+}
