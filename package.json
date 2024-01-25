@@ -2,6 +2,10 @@
   "$schema": "https://json.schemastore.org/package.json",
   "name": "rollup-babel-typescript",
   "version": "0.0.1",
+  "scripts": {
+    "dev": "rimraf dist && dotenvx run --env-file=.env.dev -- rollup --config rollup.config.ts --configPlugin typescript",
+    "build": "rimraf dist && dotenvx run -- rollup --config rollup.config.ts --configPlugin typescript"
+  },
   "type": "module",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
@@ -15,10 +19,6 @@
     "dist",
     "src"
   ],
-  "scripts": {
-    "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin typescript",
-    "watch": "rimraf dist && rollup --config rollup.config.ts --configPlugin typescript --watch"
-  },
   "repository": {
     "type": "git",
     "url": "https://gitee.com/hihookeji/heihu-iframe-tools.git"
@@ -31,8 +31,10 @@
     "@babel/plugin-transform-runtime": "^7.23.7",
     "@babel/preset-env": "^7.23.8",
     "@babel/preset-typescript": "^7.23.3",
+    "@dotenvx/dotenvx": "^0.10.6",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
     "@rollup/plugin-typescript": "^11.1.6",
     "@tsconfig/node21": "^21.0.1",
     "@types/node": "^20.11.5",
