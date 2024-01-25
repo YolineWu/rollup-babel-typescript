@@ -3,7 +3,7 @@
   "name": "rollup-babel-typescript",
   "version": "0.0.1",
   "scripts": {
-    "dev": "rimraf dist && dotenvx run --env-file=.env.dev -- rollup --config rollup.config.ts --configPlugin typescript",
+    "dev": "rimraf dist && dotenvx run --env-file=.env.dev -- rollup --config rollup.config.ts --configPlugin typescript --watch",
     "build": "rimraf dist && dotenvx run -- rollup --config rollup.config.ts --configPlugin typescript"
   },
   "type": "module",
